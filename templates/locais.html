@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Pontos de Descarte</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h2>Pontos de Descarte</h2>
+
+<form method="get">
+
+Pesquisar material:
+
+<select name="material">
+
+<option value="">Todos</option>
+<option value="plastico">Plástico</option>
+<option value="eletronicos">Eletrônicos</option>
+
+</select>
+
+<button type="submit">Pesquisar</button>
+
+</form>
+
+<hr>
+
+{% for p in pontos %}
+
+<h3>{{p.nome}}</h3>
+
+<p>Material: {{p.material}}</p>
+
+<p>Endereço: {{p.endereco}}</p>
+
+<p>Horário: {{p.horario}}</p>
+
+<a href="{{p.mapa}}" target="_blank">Ver no mapa</a>
+
+<hr>
+
+{% endfor %}
+
+<a href="/">Voltar</a>
+
+</body>
+</html>
